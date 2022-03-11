@@ -1,0 +1,268 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "ImageReknAppStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ImageReknAppStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ImageReknAppStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ImageReknAppStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/400a06f16bc978338e6840d0fe066a0086f22b30c8e7b98e2b5abf5d28f07f8c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ImageReknAppStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ImageReknAppStack.assets"
+      ],
+      "metadata": {
+        "/ImageReknAppStack/cdk-rekn-imagebucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkreknimagebucketA588DC88"
+          }
+        ],
+        "/ImageReknAppStack/cdk-rekn-imagebucket/Notifications/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkreknimagebucketNotifications1C6C352D"
+          }
+        ],
+        "/ImageReknAppStack/cdk-rekn-imagebucket/AllowBucketNotificationsToImageReknAppStackrekognitionFunction1DFD1E51": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkreknimagebucketAllowBucketNotificationsToImageReknAppStackrekognitionFunction1DFD1E51C53BB176"
+          }
+        ],
+        "/ImageReknAppStack/imageBucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageBucket"
+          }
+        ],
+        "/ImageReknAppStack/cdk-rekn-imagebucket-resized/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkreknimagebucketresizedB7E2734B"
+          }
+        ],
+        "/ImageReknAppStack/resizedBucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "resizedBucket"
+          }
+        ],
+        "/ImageReknAppStack/imageLablesTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageLablesTable14391359"
+          }
+        ],
+        "/ImageReknAppStack/table": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "table"
+          }
+        ],
+        "/ImageReknAppStack/pil/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "pilBE267954"
+          }
+        ],
+        "/ImageReknAppStack/rekognitionFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "rekognitionFunctionServiceRole85A1F6FD"
+          }
+        ],
+        "/ImageReknAppStack/rekognitionFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "rekognitionFunctionServiceRoleDefaultPolicy92A8E60B"
+          }
+        ],
+        "/ImageReknAppStack/rekognitionFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "rekognitionFunctionAC00BB5D"
+          }
+        ],
+        "/ImageReknAppStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleB6FB88EC"
+          }
+        ],
+        "/ImageReknAppStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleDefaultPolicy2CF63D36"
+          }
+        ],
+        "/ImageReknAppStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db8347ECC3691"
+          }
+        ],
+        "/ImageReknAppStack/serviceFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceFunctionServiceRole77C1C7AE"
+          }
+        ],
+        "/ImageReknAppStack/serviceFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceFunctionServiceRoleDefaultPolicy1960C355"
+          }
+        ],
+        "/ImageReknAppStack/serviceFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceFunction935310CC"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPI120CAF85"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPICloudWatchRole82F12D6C"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIAccount5B8B2C0D"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIDeploymentC5C81B85a78d36ac8400521b59b55c5835f67044"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIDeploymentStageprodC0DF38A5"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIEndpointD64DB231"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIOPTIONS9CB98D09"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimages7612E63A"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimagesOPTIONSF5131040"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/GET/ApiPermission.ImageReknAppStackimageAPIF299471E.GET..images": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimagesGETApiPermissionImageReknAppStackimageAPIF299471EGETimagesADF338F3"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/GET/ApiPermission.Test.ImageReknAppStackimageAPIF299471E.GET..images": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimagesGETApiPermissionTestImageReknAppStackimageAPIF299471EGETimages5220257A"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimagesGET5BB2A791"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/DELETE/ApiPermission.ImageReknAppStackimageAPIF299471E.DELETE..images": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimagesDELETEApiPermissionImageReknAppStackimageAPIF299471EDELETEimages58F36677"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/DELETE/ApiPermission.Test.ImageReknAppStackimageAPIF299471E.DELETE..images": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimagesDELETEApiPermissionTestImageReknAppStackimageAPIF299471EDELETEimages300635EF"
+          }
+        ],
+        "/ImageReknAppStack/imageAPI/Default/images/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageAPIimagesDELETE6CD934A8"
+          }
+        ],
+        "/ImageReknAppStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ImageReknAppStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ImageReknAppStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ImageReknAppStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ImageReknAppStack"
+    }
+  }
+}
